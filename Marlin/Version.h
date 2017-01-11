@@ -87,6 +87,6 @@
    * The WEBSITE_URL is the location where users can get more information such as
    * documentation about a specific Marlin release.
    */
-  #define WEBSITE_URL "http://pulsarx3.xxx"
+  #define WEBSITE_URL "http://pulsar3d.com"
 
 #endif // USE_AUTOMATIC_VERSIONING
