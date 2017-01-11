@@ -750,6 +750,24 @@ static void lcd_implementation_status_screen() {
 
   lcd.setCursor(0, LCD_HEIGHT - 1);
 
+
+  // LCD_ESTIMATED_TIME
+  #if ENABLED(LCD_ESTIMATED_TIME)
+  if ((card.isFileOpen()) && (((int)(card.percentDone()) >= 5))) {
+      duration_t lcdttotal = ((print_job_timer_lcd_estimated.duration()*100)/card.percentDone());
+      duration_t lcdtend = (((print_job_timer_lcd_estimated.duration()*100)/card.percentDone())-print_job_timer_lcd_estimated.duration());
+      lcd_printPGM(PSTR("TT "));
+      lcdttotal.toDigital(buffer);
+      lcd_print(buffer);
+      lcd_printPGM(PSTR(" "));
+      lcd.print(LCD_STR_CLOCK[0]);
+      lcd_printPGM(PSTR(" ETE "));
+      lcdtend.toDigital(buffer);
+      lcd_print(buffer);
+      return;
+  }
+  #endif
+
   #if ENABLED(LCD_PROGRESS_BAR)
 
     if (card.isFileOpen()) {

@@ -578,6 +578,11 @@ void kill_screen(const char* lcd_msg) {
       clear_command_queue();
       quickstop_stepper();
       print_job_timer.stop();
+
+      #if ENABLED(LCD_ESTIMATED_TIME)      
+        print_job_timer_lcd_estimated.stop();
+      #endif
+
       #if ENABLED(AUTOTEMP)
         thermalManager.autotempShutdown();
       #endif

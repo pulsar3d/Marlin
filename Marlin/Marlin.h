@@ -385,6 +385,11 @@ float code_value_temp_diff();
   extern Stopwatch print_job_timer;
 #endif
 
+// LCD_ESTIMATED_TIME
+#if ENABLED(LCD_ESTIMATED_TIME)
+  extern Stopwatch print_job_timer_lcd_estimated;
+#endif
+
 // Handling multiple extruders pins
 extern uint8_t active_extruder;
 

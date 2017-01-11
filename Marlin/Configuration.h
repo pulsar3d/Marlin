@@ -1252,6 +1252,9 @@
 //
 #define REPRAP_DISCOUNT_SMART_CONTROLLER
 
+// When using an LCD, uncomment the line below to display estimated total and remaining time, will appear for 5% printing or more
+#define LCD_ESTIMATED_TIME
+
 //
 // GADGETS3D G3D LCD/SD Controller
 // http://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel
