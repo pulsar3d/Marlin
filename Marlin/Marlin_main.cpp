@@ -543,6 +543,13 @@ static uint8_t target_extruder;
       false
     #endif
   ;
+  bool case_light2_on =
+    #if ENABLED(CASE_LIGHT_DEFAULT_ON)
+      true
+    #else
+      false
+    #endif
+  ;
 #endif
 
 #if ENABLED(DELTA)
@@ -7508,6 +7515,11 @@ inline void gcode_M907() {
   void update_case_light() {
     digitalWrite(CASE_LIGHT_PIN, case_light_on != INVERT_CASE_LIGHT ? HIGH : LOW);
     analogWrite(CASE_LIGHT_PIN, case_light_on != INVERT_CASE_LIGHT ? case_light_brightness : 0);
+  }
+
+  void update_case_light2() {
+    digitalWrite(CASE_LIGHT2_PIN, case_light2_on != INVERT_CASE_LIGHT ? HIGH : LOW);
+    analogWrite(CASE_LIGHT2_PIN, case_light2_on != INVERT_CASE_LIGHT ? case_light_brightness : 0);
   }
 
   /**

@@ -603,6 +603,16 @@ void kill_screen(const char* lcd_msg) {
       update_case_light();
     }
 
+    extern bool case_light2_on;
+    extern void update_case_light2();
+
+    void toggle_case_light2() {
+      case_light2_on = !case_light2_on;
+      lcdDrawUpdate = LCDVIEW_CALL_REDRAW_NEXT;
+      update_case_light2();
+    }
+
+
   #endif // MENU_ITEM_CASE_LIGHT
 
   /**
@@ -623,6 +633,10 @@ void kill_screen(const char* lcd_msg) {
         MENU_ITEM(function, MSG_LIGHTS_OFF, toggle_case_light);
       else
         MENU_ITEM(function, MSG_LIGHTS_ON, toggle_case_light);
+      if (case_light2_on)
+        MENU_ITEM(function, MSG_LIGHTS2_OFF, toggle_case_light2);
+      else
+        MENU_ITEM(function, MSG_LIGHTS2_ON, toggle_case_light2);
     #endif
 
     #if ENABLED(BLTOUCH)
