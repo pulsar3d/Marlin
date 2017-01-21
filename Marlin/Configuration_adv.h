@@ -225,8 +225,8 @@
 #define EXTRUDER_AUTO_FAN_SPEED   255  // == full speed
 
 // Define a pin to turn case light on/off
-#define CASE_LIGHT_PIN 24
-#define CASE_LIGHT2_PIN 28
+#define CASE_LIGHT_PIN -1
+#define CASE_LIGHT2_PIN -1
 #if PIN_EXISTS(CASE_LIGHT)
   #define INVERT_CASE_LIGHT false   // Set to true if HIGH is the OFF state (active low)
   //#define CASE_LIGHT_DEFAULT_ON   // Uncomment to set default state to on
