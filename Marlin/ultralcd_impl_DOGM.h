@@ -172,7 +172,12 @@
 #elif ENABLED(U8GLIB_SH1106)
   // Generic support for SH1106 OLED I2C LCDs
   //U8GLIB_SH1106_128X64 u8g(U8G_I2C_OPT_NONE | U8G_I2C_OPT_FAST);  // 8 stripes
-  U8GLIB_SH1106_128X64_2X u8g(U8G_I2C_OPT_NONE | U8G_I2C_OPT_FAST); // 4 stripes
+/*---------------MKS OLED patch_2-----------------------*/
+
+  //U8GLIB_SH1106_128X64_2X u8g(U8G_I2C_OPT_NONE | U8G_I2C_OPT_FAST); // 4 stripes
+  U8GLIB_SH1106_128X64 u8g(23, 17, 16, 25);	// SW SPI Com: SCK = 23, MOSI = 17, CS = 16, A0 = 25
+
+/*---------------MKS OLED patch_2-----------------------*/
 #elif ENABLED(MINIPANEL)
   // The MINIPanel display
   //U8GLIB_MINI12864 u8g(DOGLCD_CS, DOGLCD_A0);  // 8 stripes
