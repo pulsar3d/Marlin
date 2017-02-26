@@ -1263,6 +1263,11 @@ void kill_screen(const char* lcd_msg) {
     #endif
 
     //
+    // change filament
+    //
+      MENU_ITEM(function, MSG_FILAMENTCHANGE, lcd_enqueue_filament_change);
+
+    //
     // Auto Home
     //
     //MENU_ITEM(gcode, MSG_AUTO_HOME, PSTR("G28"));
