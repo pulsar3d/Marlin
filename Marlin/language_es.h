@@ -84,7 +84,7 @@
 #define MSG_MIN                             " " LCD_STR_THERMOMETER " Min"
 #define MSG_MAX                             " " LCD_STR_THERMOMETER " Max"
 #define MSG_FACTOR                          " " LCD_STR_THERMOMETER " Fact"
-#define MSG_AUTOTEMP                        "Temperatura Auto."
+#define MSG_AUTOTEMP                        "Temp. Auto."
 #define MSG_ON                              "Encender"
 #define MSG_OFF                             "Apagar"
 #define MSG_PID_P                           "PID-P"
