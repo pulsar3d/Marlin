@@ -613,12 +613,6 @@ void kill_screen(const char* lcd_msg) {
     //
     // Switch case light on/off
     //
-    #if ENABLED(MENU_ITEM_CASE_LIGHT)
-      if (case_light_on)
-        MENU_ITEM(function, MSG_LIGHTS_OFF, toggle_case_light);
-      else
-        MENU_ITEM(function, MSG_LIGHTS_ON, toggle_case_light);
-    #endif
 
     #if ENABLED(BLTOUCH)
       if (!endstops.z_probe_enabled && TEST_BLTOUCH())
@@ -987,6 +981,7 @@ void kill_screen(const char* lcd_msg) {
     void lcd_preheat_material1_menu() {
       START_MENU();
       MENU_BACK(MSG_PREPARE);
+
       #if HOTENDS == 1
         MENU_ITEM(function, MSG_PREHEAT_1, lcd_preheat_material1_hotend0);
       #else
@@ -1255,6 +1250,16 @@ void kill_screen(const char* lcd_msg) {
     // ^ Main
     //
     MENU_BACK(MSG_MAIN);
+
+    //
+    // leds 
+    //
+    #if ENABLED(MENU_ITEM_CASE_LIGHT)
+      if (case_light_on)
+        MENU_ITEM(function, MSG_LIGHTS_OFF, toggle_case_light);
+      else
+        MENU_ITEM(function, MSG_LIGHTS_ON, toggle_case_light);
+    #endif
 
     //
     // Auto Home
