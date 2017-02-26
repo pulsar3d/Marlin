@@ -1510,7 +1510,7 @@ void kill_screen(const char* lcd_msg) {
 
   void lcd_move_menu() {
     START_MENU();
-    MENU_BACK(MSG_MOVE_AXIS);
+    MENU_BACK(MSG_PREPARE);
 
     move_menu_scale = 1.0;
 
