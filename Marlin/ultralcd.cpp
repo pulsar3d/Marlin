@@ -628,7 +628,7 @@ void kill_screen(const char* lcd_msg) {
         MENU_ITEM(submenu, MSG_DELTA_CALIBRATE, lcd_delta_calibrate_menu);
       #endif
     }
-    MENU_ITEM(submenu, MSG_CONTROL, lcd_control_menu);
+    //MENU_ITEM(submenu, MSG_CONTROL, lcd_control_menu);
 
     #if ENABLED(SDSUPPORT)
       if (card.cardOK) {
@@ -1298,6 +1298,7 @@ void kill_screen(const char* lcd_msg) {
     //
     //MENU_ITEM(gcode, MSG_DISABLE_STEPPERS, PSTR("M84"));
 
+    MENU_ITEM(submenu, MSG_TEMPERATURE, lcd_control_temperature_menu);
 
     //
     // Preheat PLA
@@ -1663,7 +1664,7 @@ void kill_screen(const char* lcd_msg) {
     //
     // ^ Control
     //
-    MENU_BACK(MSG_CONTROL);
+    MENU_BACK(MSG_PREPARE);
 
     //
     // Nozzle:
