@@ -1264,7 +1264,7 @@ void kill_screen(const char* lcd_msg) {
     //
     // Auto Home
     //
-    MENU_ITEM(gcode, MSG_AUTO_HOME, PSTR("G28"));
+    //MENU_ITEM(gcode, MSG_AUTO_HOME, PSTR("G28"));
     #if ENABLED(INDIVIDUAL_AXIS_HOMING_MENU)
       MENU_ITEM(gcode, MSG_AUTO_HOME_X, PSTR("G28 X"));
       MENU_ITEM(gcode, MSG_AUTO_HOME_Y, PSTR("G28 Y"));
@@ -1274,7 +1274,7 @@ void kill_screen(const char* lcd_msg) {
     //
     // Set Home Offsets
     //
-    MENU_ITEM(function, MSG_SET_HOME_OFFSETS, lcd_set_home_offsets);
+    //MENU_ITEM(function, MSG_SET_HOME_OFFSETS, lcd_set_home_offsets);
     //MENU_ITEM(gcode, MSG_SET_ORIGIN, PSTR("G92 X0 Y0 Z0"));
 
     //
@@ -1296,7 +1296,8 @@ void kill_screen(const char* lcd_msg) {
     //
     // Disable Steppers
     //
-    MENU_ITEM(gcode, MSG_DISABLE_STEPPERS, PSTR("M84"));
+    //MENU_ITEM(gcode, MSG_DISABLE_STEPPERS, PSTR("M84"));
+
 
     //
     // Preheat PLA
