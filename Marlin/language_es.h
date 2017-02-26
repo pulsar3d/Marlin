@@ -121,7 +121,7 @@
 #define MSG_RESTORE_FAILSAFE                "Restaurar memoria"
 #define MSG_REFRESH                         "Volver a cargar"
 #define MSG_WATCH                           "Informacion"
-#define MSG_PREPARE                         "Preparar"
+#define MSG_PREPARE                         "Ajustes"
 #define MSG_TUNE                            "Ajustar"
 #define MSG_PAUSE_PRINT                     "Pausar impresion"
 #define MSG_RESUME_PRINT                    "Reanudar impresion"
