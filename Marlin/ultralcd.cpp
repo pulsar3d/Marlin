@@ -1265,8 +1265,9 @@ void kill_screen(const char* lcd_msg) {
     //
     // change filament
     //
+    #if ENABLED(FILAMENT_CHANGE_FEATURE)
       MENU_ITEM(function, MSG_FILAMENTCHANGE, lcd_enqueue_filament_change);
-
+ #endif
     //
     // Auto Home
     //
