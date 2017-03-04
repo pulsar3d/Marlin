@@ -494,7 +494,7 @@ static void lcd_implementation_status_screen() {
       #if ENABLED(DOGM_SD_PERCENT)
         if (PAGE_CONTAINS(41, 48)) {
           // Percent complete
-          u8g.setPrintPos(100, 63);
+          u8g.setPrintPos(104, 63);
           u8g.print(itostr3(card.percentDone()));
           u8g.print('%');
         }
