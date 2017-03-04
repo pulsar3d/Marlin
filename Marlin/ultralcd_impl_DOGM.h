@@ -474,13 +474,27 @@ static void lcd_implementation_status_screen() {
         );
 
       //
+      // Print estimated total time
+      //
+
+      if ((card.isFileOpen()) && (((int)(card.percentDone()) >= 5))) {
+           char buffer[10];
+           duration_t lcdttotal = ((print_job_timer.duration()*100)/card.percentDone());
+           bool has_days = (lcdttotal.value > 60*60*24L);
+           uint8_t len = lcdttotal.toDigital(buffer, has_days);
+           u8g.setPrintPos(55, 48);
+           lcd_print(buffer);
+           u8g.print('!');
+      }
+
+      //
       // SD Percent Complete
       //
 
       #if ENABLED(DOGM_SD_PERCENT)
         if (PAGE_CONTAINS(41, 48)) {
           // Percent complete
-          u8g.setPrintPos(55, 48);
+          u8g.setPrintPos(100, 63);
           u8g.print(itostr3(card.percentDone()));
           u8g.print('%');
         }
