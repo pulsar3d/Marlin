@@ -754,6 +754,13 @@ void kill_screen(const char* lcd_msg) {
       lcd_filament_change_show_message(FILAMENT_CHANGE_MESSAGE_INIT);
       enqueue_and_echo_commands_P(PSTR("M600"));
     }
+    void lcd_enqueue_filament_change2() {
+      lcd_filament_change_show_message(FILAMENT_CHANGE_MESSAGE_INIT);
+      enqueue_and_echo_commands_P(PSTR("M109 S200"));
+      enqueue_and_echo_commands_P(PSTR("M600"));
+    }
+
+
   #endif
 
   /**
@@ -1266,7 +1273,7 @@ void kill_screen(const char* lcd_msg) {
     // change filament
     //
     #if ENABLED(FILAMENT_CHANGE_FEATURE)
-      MENU_ITEM(function, MSG_FILAMENTCHANGE, lcd_enqueue_filament_change);
+      MENU_ITEM(function, MSG_FILAMENTCHANGE, lcd_enqueue_filament_change2);
  #endif
     //
     // Auto Home
